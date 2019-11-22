@@ -16,7 +16,7 @@ class Productpic extends React.Component {
                     						data-item-image={Pic1}
                     						data-item-name= "Product Name"
                     						data-item-description= "Description"
-                    						data-item-url={"http://snipcart-gatsby.netlify.com"}>
+                    						data-item-url={"https://snipcart-gatsby.netlify.com"}>
 				    </img>
 													
 				</span>

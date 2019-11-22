@@ -19,7 +19,8 @@ import Productpic from './productpic'
                 <h2 style={{
                     textAlign: "center",
                     }}>
-                Welcome to My Shop
+                Welcome to My Shop. <br />
+				Coming Soon!
                 </h2>
 			</CardTitle>
 			<CardSubtitle>
