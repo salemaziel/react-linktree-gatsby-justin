@@ -1,0 +1,92 @@
+
+
+.Wrapper {
+   /** position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    /**padding-bottom: 40px;**/
+    /**display: flex;
+    background-size: cover;
+    /**place-items: center;**/
+    /**background-color: #ffffff;**/
+    /**background-image: linear-gradient(to right, #55338d, #773c98, #9846a2, #b751aa, #d65db1);**/
+    /**background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(40,42,71,1) 33%, rgba(88,97,116,1) 66%, rgba(159,177,181,1) 100%);**/
+    /**background-image: url(../assets/images/sdcoast.jpg);
+    justify-content: center;
+    z-index: 1;
+}**/
+
+-webkit-overflow-scrolling: touch;
+display: flex;
+-moz-flex-direction: column;
+-webkit-flex-direction: column;
+-ms-flex-direction: column;
+flex-direction: column;
+-moz-align-items: center;
+-webkit-align-items: center;
+-ms-align-items: center;
+align-items: center;
+-moz-justify-content: center;
+-webkit-justify-content: center;
+-ms-justify-content: center;
+justify-content: center;
+min-height: 100vh;
+position: relative;
+z-index: 2;
+overflow: hidden;
+padding: 1.5625rem 1.5625rem 1.5625rem 1.5625rem;
+background-image: url(../assets/images/sdcoast.jpg);
+background-size: cover;
+}
+
+
+.Wrapper:after {
+    content:"";
+	position:absolute;
+	top:0px;
+	right:0px;
+	bottom:0px;
+	left:0px;
+	background:rgba(0,0,0,0.5);
+    height:100%;
+    z-index: 2;
+    
+}
+
+/**.card-bg {
+    position: relative;
+    padding: 3rem 3rem 4rem;
+    background-color:rgba(255,255,255,0.70);
+    border: 5px;
+    border-radius: 15px;
+    z-index: 10;
+
+}**/
+
+.card-subtitle {
+    text-align: center;
+}
+
+.container {
+    display: flexbox;
+    margin: auto;
+    /**background-image: linear-gradient(to right, #55338d, #773c98, #9846a2, #b751aa, #d65db1);**/
+   
+    border: 10px;
+    border-radius: 10px;
+    /**background-color: #FFF;**/
+
+}
+
+.span {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
