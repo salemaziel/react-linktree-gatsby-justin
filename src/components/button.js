@@ -1,6 +1,5 @@
 
 import styled, { css } from 'styled-components'
-import '../css/main.css'
 
 
 const Button = styled.Button = styled.a`
@@ -18,7 +17,8 @@ const Button = styled.Button = styled.a`
   }
 
   ${props => props.primary && css`
-    background:#575F73;
+    background: transparent;
+    border: 2px solid #ffffff;
     color: #ffffff;
     padding: 0.5em 3em;
     font-weight: 800px;

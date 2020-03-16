@@ -1,6 +1,5 @@
 import React from 'react'
 //import {} from 'reactstrap';
-import '../css/gallery2.css'
 import Pic1 from '../assets/images/pic01.jpg'
 import Pic2 from '../assets/images/pic02.jpg'
 import Pic3 from '../assets/images/pic03.jpg'

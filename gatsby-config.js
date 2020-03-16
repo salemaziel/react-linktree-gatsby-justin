@@ -1,56 +1,28 @@
+const config = require('./config');
 module.exports = {
-  siteMetadata: require("./site-metadata.json"),
+  pathPrefix: config.pathPrefix,
+  siteMetadata: {
+    title: config.siteTitle,
+  },
   plugins: [
-    `gatsby-plugin-styled-components`,
-    {
-      resolve: `gatsby-source-instagram`,
-      options: {
-        username: ``,
-      },
-    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `pages`,
-        path: `${__dirname}/src/pages/`,
+        path: `${__dirname}/content`,
+        name: `content`,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/assets/images`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
-    "gatsby-transformer-javascript-frontmatter",
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        // CommonMark mode (default: true)
-        commonmark: true,
-        // Footnotes mode (default: true)
-        footnotes: true,
-        // Pedantic mode (default: true)
-        pedantic: true,
-        // GitHub Flavored Markdown mode (default: true)
-        gfm: true,
-        // Plugins configs
-        plugins: [],
-      },
-    },
-    {
-      resolve: "gatsby-transformer-remark",
-      options: {
         plugins: [
-        {
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              //maxWidth: 800,
+            },
+          },
+          {
           resolve: "gatsby-remark-embed-video",
           options: {
             width: 800,
@@ -65,23 +37,37 @@ module.exports = {
               }
             ] //Optional: Override URL of a service provider, e.g to enable youtube-nocookie support
           }
-        }
-        ]
-      }
-    },
-    {
-      resolve: `gatsby-plugin-sharp`,
-      options: {
-        useMozJpeg: false,
-        stripMetadata: true,
-        defaultQuality: 75,
+        },
+          `gatsby-remark-copy-linked-files`,
+          `gatsby-remark-responsive-iframe`,
+        ],
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-plugin-typography`,
       options: {
-        plugins: [`gatsby-remark-responsive-iframe`],
+        pathToConfigModule: `src/utils/typography`,
       },
+    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    "gatsby-transformer-javascript-frontmatter",
+    //{
+    //  resolve: `gatsby-plugin-sharp`,
+    //  options: {
+    //    useMozJpeg: false,
+    //    stripMetadata: true,
+    //    defaultQuality: 75,
+     // },
+    //},
+    //},
+    {
+      resolve: 'gatsby-plugin-snipcart',
+      options: {
+        //replace with own Snipcart API key
+        apiKey: 'ZjVkN2M3YzEtOGU0Yy00ZTUzLWFiZGQtNTNkZjY3NGM2YThkNjM3MDg5MjIyODA1Nzg2OTk5',
+        autopop: true,
+          }
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
@@ -109,5 +95,21 @@ module.exports = {
         cookieDomain: "example.com",
       },
     },
+    `gatsby-plugin-styled-components`,
+    'gatsby-plugin-react-helmet',
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: config.manifestName,
+        short_name: config.manifestShortName,
+        start_url: config.pathPrefix || config.manifestStartUrl,
+        background_color: config.manifestBackgroundColor,
+        theme_color: config.manifestThemeColor,
+        display: config.manifestDisplay,
+        icon: config.manifestIcon, // This path is relative to the root of the site.
+      },
+    },
+    'gatsby-plugin-sass',
+    'gatsby-plugin-offline',
   ]
 }
