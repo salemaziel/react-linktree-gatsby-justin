@@ -5,9 +5,6 @@ module.exports = {
     title: config.siteTitle,
   },
   plugins: [
-<<<<<<< HEAD
-=======
-    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -16,52 +13,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 800,
-            },
-          },
-          {
-          resolve: "gatsby-remark-embed-video",
-          options: {
-            width: 800,
-            ratio: 1.77, // Optional: Defaults to 16/9 = 1.77
-            height: 400, // Optional: Overrides optional.ratio
-            related: false, //Optional: Will remove related videos from the end of an embedded YouTube video.
-            noIframeBorder: true, //Optional: Disable insertion of <style> border: 0
-            urlOverrides: [
-              {
-                id: 'youtube',
-                embedURL: (videoId) => `https://www.youtube-nocookie.com/embed/${videoId}`,
-              }
-            ] //Optional: Override URL of a service provider, e.g to enable youtube-nocookie support
-          }
-        },
-          `gatsby-remark-copy-linked-files`,
-        ],
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `pages`,
-        path: `${__dirname}/src/pages/`,
-      },
-    },
->>>>>>> a9226272d10b50e95835acedcf2a532a2031de56
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content`,
-        name: `content`,
-      },
-    },
-    {
-<<<<<<< HEAD
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
@@ -94,18 +45,6 @@ module.exports = {
     },
     {
       resolve: `gatsby-plugin-typography`,
-=======
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
-    "gatsby-transformer-javascript-frontmatter",
-    {
-      resolve: `gatsby-plugin-sharp`,
->>>>>>> a9226272d10b50e95835acedcf2a532a2031de56
       options: {
         pathToConfigModule: `src/utils/typography`,
       },
@@ -164,10 +103,7 @@ module.exports = {
         cookieDomain: "example.com",
       },
     },
-<<<<<<< HEAD
     `gatsby-plugin-styled-components`,
-=======
->>>>>>> a9226272d10b50e95835acedcf2a532a2031de56
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-plugin-manifest`,

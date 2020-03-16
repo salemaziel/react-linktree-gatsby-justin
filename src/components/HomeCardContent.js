@@ -24,10 +24,6 @@ import { faSnapchat } from "@fortawesome/free-brands-svg-icons"
 class HomeCardContent extends React.Component {
    render() {
     return (
-<<<<<<< HEAD:src/components/HomeCardContent.js
-=======
-        <>
->>>>>>> a9226272d10b50e95835acedcf2a532a2031de56:src/components/HomeCardContent.js
         <CardBody>
         
           
@@ -56,20 +52,11 @@ class HomeCardContent extends React.Component {
                     textAlign: 'center',
                 }}>
               {/**<Button primary prefetch href="/gallery">Gallery display</Button>**/}
-<<<<<<< HEAD:src/components/HomeCardContent.js
               <Link to="/shop" prefetch preload>
                     <Button primary className="shopBack">
                         My Shop
                     </Button>
                 </Link>
-=======
-                
-                    <Button primary>
-                        <Link to="/shop" prefetch preload>
-                        My Shop
-                        </Link>
-                    </Button>
->>>>>>> a9226272d10b50e95835acedcf2a532a2031de56:src/components/HomeCardContent.js
                 
               </div>
                     {/**<div className='items'>
@@ -88,10 +75,6 @@ class HomeCardContent extends React.Component {
                 
         </CardBody>
 
-<<<<<<< HEAD:src/components/HomeCardContent.js
-=======
-        </>
->>>>>>> a9226272d10b50e95835acedcf2a532a2031de56:src/components/HomeCardContent.js
         )
     };
 }
