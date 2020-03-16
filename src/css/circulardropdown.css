@@ -21,7 +21,7 @@
     font-size: 15px;
   }
   **/
-  /* Layout */
+  /* Layout * /
   .center-menu {
     height: 50%;
     display: block;
@@ -77,7 +77,7 @@
     top: 32px;
   }
   
-  /* Checkbox */
+  /* Checkbox * /
   .menu-open {
     display: none;
   }
@@ -105,7 +105,7 @@
     background: #fafaea;
   }
   
-  /* Menu items */
+  /* Menu items * /
   a.icon {
     display: inline-block;
     cursor: pointer;

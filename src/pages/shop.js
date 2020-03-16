@@ -1,19 +1,109 @@
 import React from 'react';
-import '../app.css'
-import Layout2sales from '../components/Layout2sales'
+//import ShopCardContent from '../components/ShopCardContent'
+import {
+    CardBody,
+    CardTitle, CardSubtitle,  
+    
+  } from 'reactstrap'
+
+import '../css/HomeCardContent.css'
+import Layout from '../components/Layout';
+import ItemThumbnail from '../components/ItemThumbnail/ItemThumbnail'
+
+
+import { Link } from 'gatsby'
+import { graphql } from "gatsby"
+import styled from "styled-components"
 
 
 
-import '../css/cardcontent.css'
-import '../css/main.css'
+const ThumbnailsWrapper = styled.div`
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+`
 
 
-const Shop = () => (
-        <div className='Wrapper'>
 
-            <Layout2sales />
+
+class Shop extends React.Component {
+    render() {
+      const { data } = this.props
+      const siteTitle = data.site.siteMetadata.title
+      const products = data.allMarkdownRemark.edges
+      return (
+        <Layout location={this.props.location} title={siteTitle}>
+                <CardTitle>
+                    <h2>
+                        Welcome to My Shop. 
+                    <br />
+				        Coming Soon! 
+                    </h2> 
+                </CardTitle>
+
+                <CardBody>
+                    <CardSubtitle>
+                            <h4 style={{textAlign: "center"}}>
+                                Close Window After Adding to Cart To Continue Shopping. 
+                            </h4>
+			        </CardSubtitle>
+
+                    <ThumbnailsWrapper>
+                    {products.map(({ node }) => {
+                        const { title, image, price } = node.frontmatter
+                            return (
+                                <ItemThumbnail
+                                    key={node.fields.slug}
+                                    link={node.fields.slug}
+                                    heading={title}
+                                    image={image.childImageSharp.fluid}
+                                    price={price}
+                                    />
+                                )
+                            })}
+                    </ThumbnailsWrapper>
+
+
+                </CardBody>         
             
-        </div>
-)
+        </Layout>
+        )
+    }
+}
+
 
 export default Shop
+
+export const pageQuery = graphql`
+query {
+  site {
+    siteMetadata {
+      title
+    }
+  } 
+  allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    edges {
+      node {
+        excerpt
+        fields {
+          slug
+        }
+        frontmatter {
+          title
+          price
+          image {
+            childImageSharp {
+              fluid(maxWidth: 800) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+`

@@ -5,11 +5,11 @@ import {
     
   } from 'reactstrap'
 import '../css/cardcontent.css'
-import Header from './header';
+//import Header from './header';
 
 import '../css/gallery2.css'
 import Gallery2 from './gallery2';
-import Footer from '../components/footer'
+//import Footer from '../components/footer'
 
 
 
@@ -17,7 +17,7 @@ function Cardcontent2() {
     
     return (
         <Card className="card-bg gallery2">
-            <Header />
+            {/*<Header />*/}
         <CardBody>
         
           <CardTitle>
@@ -39,7 +39,7 @@ function Cardcontent2() {
                 
                 
         </CardBody>
-        <Footer />
+        {/*<Footer />*/}
         </Card>
     )
 }

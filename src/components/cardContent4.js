@@ -5,8 +5,8 @@ import {
     
   } from 'reactstrap'
 
-import '../css/cardcontent.css'
-import Header from './header';
+import '../css/HomeCardContent.css'
+//import Header from './header';
 
 import '../css/gallery2.css'
 import Footer from './footer'

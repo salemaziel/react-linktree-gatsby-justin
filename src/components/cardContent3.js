@@ -5,8 +5,8 @@ import {
     
   } from 'reactstrap'
 
-import '../css/cardcontent.css'
-import Header from './header';
+import '../css/HomeCardContent.css'
+//import Header from './header';
 import Gallery3 from './gallery3'
 import '../css/gallery.css'
 
@@ -17,7 +17,7 @@ function Cardcontent3() {
     
     return (
         <Card className="card-bg">
-            <Header />
+           {/*} <Header />*/}
         <CardBody>
         
           <CardTitle>

@@ -4,7 +4,7 @@ import {
   } from 'reactstrap'
   import '../app.css'
   import '../css/main.css'
-  import Cardcontent2sales from './cardContent2sales'
+  import ShopCardContent from './ShopCardContent'
 import '../css/gallery2.css'
   //import Header from '../components/header'
 
@@ -14,7 +14,7 @@ class Layout2sales extends React.Component {
     render() {
         return (
             <Container>
-                <Cardcontent2sales />
+                <ShopCardContent />
                
             </Container>
 

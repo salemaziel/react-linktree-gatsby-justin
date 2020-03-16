@@ -1,5 +1,5 @@
 /* Row */
-
+/*
 .row {
     display: flex;
     flex-wrap: wrap;
@@ -1468,7 +1468,7 @@
 
 
 
-    /* Image */
+    /* Image * /
 
 	.image {
 		border: 0;
@@ -1490,7 +1490,7 @@
 			top: 0;
 			width: 100%;
 			z-index: 1;
-		}**/
+		}** /
 
 		.image.left {
 			float: left;
@@ -1526,7 +1526,7 @@
                 height: 100%;
 			}
 
-            /* Main */
+            /* Main * /
 
 .main.style1 {
 		overflow: hidden;
@@ -1637,7 +1637,7 @@
 		}
 
 
-        /* Box */
+        /* Box * /
 
 .box {
 		border-radius: 8px;
@@ -1658,7 +1658,7 @@
 	padding: 0;
 	}
 
-.container {
+/*.container {
     display: block;
-}
+}*/
     

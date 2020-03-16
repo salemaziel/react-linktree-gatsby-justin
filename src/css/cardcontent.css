@@ -1,13 +1,13 @@
 
 
 
-.card-bg {
-    /**position: relative;
+/*.card-bg {
+    / **position: relative;
     padding: 3rem 3rem 4rem;
     background-color:rgba(20, 20, 20, 0.85);
     border: 10px;
     border-radius: 15px;
-    color: #ffffff;**/
+    color: #ffffff;** /
     display: grid;
     position: relative;
     max-width: 100%;
@@ -39,19 +39,19 @@
     position: relative;
     padding: 3.125rem 2.5rem;
     max-width: 100%;
-    /**width: 40rem;**/
-}
+    /**width: 40rem;** /
+}* /
 
 .gallery2 {
     position: relative;
     padding: 3rem 1.5rem 4rem;
-    /**background-color:rgba(255,255,255,0.70);**/
+    /**background-color:rgba(255,255,255,0.70);** /
     border: 10px;
     border-radius: 15px;
 }
 /**.card-body {
     margin: 0;
-}**/
+}** /
 
 .card-title{
     margin: auto;
@@ -79,3 +79,4 @@
     justify-self: center;
     align-self: center;
 }
+*/

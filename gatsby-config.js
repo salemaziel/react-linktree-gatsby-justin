@@ -1,11 +1,43 @@
+const config = require('./config');
 module.exports = {
   siteMetadata: require("./site-metadata.json"),
   plugins: [
     `gatsby-plugin-styled-components`,
     {
-      resolve: `gatsby-source-instagram`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        username: ``,
+        path: `${__dirname}/content`,
+        name: `content`,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 800,
+            },
+          },
+          {
+          resolve: "gatsby-remark-embed-video",
+          options: {
+            width: 800,
+            ratio: 1.77, // Optional: Defaults to 16/9 = 1.77
+            height: 400, // Optional: Overrides optional.ratio
+            related: false, //Optional: Will remove related videos from the end of an embedded YouTube video.
+            noIframeBorder: true, //Optional: Disable insertion of <style> border: 0
+            urlOverrides: [
+              {
+                id: 'youtube',
+                embedURL: (videoId) => `https://www.youtube-nocookie.com/embed/${videoId}`,
+              }
+            ] //Optional: Override URL of a service provider, e.g to enable youtube-nocookie support
+          }
+        },
+          `gatsby-remark-copy-linked-files`,
+        ],
       },
     },
     {
@@ -32,44 +64,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
     "gatsby-transformer-javascript-frontmatter",
     {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        // CommonMark mode (default: true)
-        commonmark: true,
-        // Footnotes mode (default: true)
-        footnotes: true,
-        // Pedantic mode (default: true)
-        pedantic: true,
-        // GitHub Flavored Markdown mode (default: true)
-        gfm: true,
-        // Plugins configs
-        plugins: [],
-      },
-    },
-    {
-      resolve: "gatsby-transformer-remark",
-      options: {
-        plugins: [
-        {
-          resolve: "gatsby-remark-embed-video",
-          options: {
-            width: 800,
-            ratio: 1.77, // Optional: Defaults to 16/9 = 1.77
-            height: 400, // Optional: Overrides optional.ratio
-            related: false, //Optional: Will remove related videos from the end of an embedded YouTube video.
-            noIframeBorder: true, //Optional: Disable insertion of <style> border: 0
-            urlOverrides: [
-              {
-                id: 'youtube',
-                embedURL: (videoId) => `https://www.youtube-nocookie.com/embed/${videoId}`,
-              }
-            ] //Optional: Override URL of a service provider, e.g to enable youtube-nocookie support
-          }
-        }
-        ]
-      }
-    },
-    {
       resolve: `gatsby-plugin-sharp`,
       options: {
         useMozJpeg: false,
@@ -82,6 +76,14 @@ module.exports = {
       options: {
         plugins: [`gatsby-remark-responsive-iframe`],
       },
+    },
+    {
+      resolve: 'gatsby-plugin-snipcart',
+      options: {
+        //replace with own Snipcart API key
+        apiKey: 'MjQ2MDY4MDctMDZkYi00ZTY0LWFlODItNzhlMmEzZDg1NTBiNjM2OTc2Nzk1NjcwMTU3MTkx',
+        autopop: true,
+          }
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
@@ -109,5 +111,20 @@ module.exports = {
         cookieDomain: "example.com",
       },
     },
+    'gatsby-plugin-react-helmet',
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: config.manifestName,
+        short_name: config.manifestShortName,
+        start_url: config.pathPrefix || config.manifestStartUrl,
+        background_color: config.manifestBackgroundColor,
+        theme_color: config.manifestThemeColor,
+        display: config.manifestDisplay,
+        icon: config.manifestIcon, // This path is relative to the root of the site.
+      },
+    },
+    'gatsby-plugin-sass',
+    'gatsby-plugin-offline',
   ]
 }
