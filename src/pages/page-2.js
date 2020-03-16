@@ -1,11 +1,7 @@
 import React from 'react';
-import '../app.css'
-import Layout1 from '../components/Layout1'
-import Layout2 from '../components/Layout2'
+import Layout from '../components/Layout'
 //import Layout3 from '../components/Layout3'
-import Layout4 from '../components/Layout4'
-
-import Circulardropdown from '../components/circulardropdown'
+import Productpic from '../components/productpic'
 
 import {
     Card, CardText, CardBody,
@@ -13,20 +9,11 @@ import {
     
   } from 'reactstrap'
 
-import '../css/cardcontent.css'
-import '../css/main.css'
-import Layout2sales from '../components/Layout2sales';
 
-const Index = () => (
-        <div className='Wrapper'>
-           <Card className="card-bg">
-                <CardTitle>Title</CardTitle>
-                <CardBody>
-                    <Circulardropdown />
-                    <CardText>Text text text et etc etc</CardText>
-                </CardBody>
-           </Card>
-        </div>
+const Page2 = () => (
+        <Layout>
+           <Productpic />
+        </Layout>
 )
 
-export default Index
+export default Page2
