@@ -14,9 +14,24 @@ import ItemThumbnail from '../components/ItemThumbnail/ItemThumbnail'
 import { Link } from 'gatsby'
 import { graphql } from "gatsby"
 import styled from "styled-components"
+<<<<<<< HEAD
 import Button from "../components/button";
+=======
+>>>>>>> a9226272d10b50e95835acedcf2a532a2031de56
 
 import '../css/Back.css'
+
+<<<<<<< HEAD
+const ThumbnailsWrapper = styled.div`
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+`
+
+=======
 
 const ThumbnailsWrapper = styled.div`
     width: 100%;
@@ -27,6 +42,7 @@ const ThumbnailsWrapper = styled.div`
     padding: 20px;
 `
 
+>>>>>>> a9226272d10b50e95835acedcf2a532a2031de56
 
 
 
@@ -34,6 +50,7 @@ class Shop extends React.Component {
     render() {
       const { data } = this.props
       const siteTitle = data.site.siteMetadata.title
+<<<<<<< HEAD
       const items = data.allMarkdownRemark.edges
       return (
         <Layout location={this.props.location} title={siteTitle}>
@@ -44,6 +61,11 @@ class Shop extends React.Component {
       </Button>
       </Link>
     </div>
+=======
+      const products = data.allMarkdownRemark.edges
+      return (
+        <Layout location={this.props.location} title={siteTitle}>
+>>>>>>> a9226272d10b50e95835acedcf2a532a2031de56
                 <CardTitle>
                     <h2>
                         Welcome to My Shop. 
@@ -60,7 +82,11 @@ class Shop extends React.Component {
 			        </CardSubtitle>
 
                     <ThumbnailsWrapper>
+<<<<<<< HEAD
                     {items.map(({ node }) => {
+=======
+                    {products.map(({ node }) => {
+>>>>>>> a9226272d10b50e95835acedcf2a532a2031de56
                         const { title, image, price } = node.frontmatter
                             return (
                                 <ItemThumbnail

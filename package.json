@@ -43,7 +43,10 @@
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-helmet": "^5.2.1",
+<<<<<<< HEAD
     "react-image-gallery": "^1.0.6",
+=======
+>>>>>>> a9226272d10b50e95835acedcf2a532a2031de56
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.3.0",
     "react-snipcart": "^0.1.6",

@@ -20,7 +20,11 @@ class ShopCardContent extends React.Component {
     render(){
             const { data } = this.props
             const siteTitle = data.site.siteMetadata.title
+<<<<<<< HEAD
             const items = data.allMarkdownRemark.edges
+=======
+            const products = data.allMarkdownRemark.edges
+>>>>>>> a9226272d10b50e95835acedcf2a532a2031de56
         return (
             <>
                 <CardTitle>
@@ -44,7 +48,11 @@ class ShopCardContent extends React.Component {
             
           
                     {/*<ThumbnailsWrapper>
+<<<<<<< HEAD
                         {s.map(({ node }) => {
+=======
+                        {products.map(({ node }) => {
+>>>>>>> a9226272d10b50e95835acedcf2a532a2031de56
                             const { title, image, price } = node.frontmatter
                                 return (
                                     <ItemThumbnail
