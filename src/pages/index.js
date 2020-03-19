@@ -3,7 +3,6 @@ import Layout from '../components/Layout'
 
 import HomeCardContent from '../components/HomeCardContent'
 
-import HomeCardContent from '../components/HomeCardContent'
 
 
 
